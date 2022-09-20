@@ -69,9 +69,12 @@ addBtn.addEventListener("click",()=>{
             console.log(this);
             this.parentElement.classList.add("hidden");
             this.parentElement.parentElement.firstChild.disabled=false;
+
+            //adding focus always at the end of the note
             const end = this.parentElement.parentElement.firstChild.value.length;
             this.parentElement.parentElement.firstChild.setSelectionRange(end, end);
             this.parentElement.parentElement.firstChild.focus();
+
             this.parentElement.parentElement.firstChild.setAttribute("initialVal",this.parentElement.parentElement.firstChild.value);
             this.parentElement.parentElement.lastChild.classList.remove("hidden");
         }))
